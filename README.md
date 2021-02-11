@@ -8,7 +8,7 @@
   </p>
 </p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CYgWz0DFw2g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/CYgWz0DFw2g/0.jpg)](http://www.youtube.com/watch?v=CYgWz0DFw2g)
 
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
