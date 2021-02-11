@@ -1,0 +1,9 @@
+module test (clk, reset, hex);
+input clk;
+input reset;
+output [6:0] hex;
+
+
+
+
+endmodule

@@ -1,0 +1,16 @@
+Info (10281): Verilog HDL Declaration information at car.v(8): object "KEY" differs only in case from object "key" in the same scope File: D:/Study/verilog source code/asscar/car.v Line: 8
+Info (10281): Verilog HDL Declaration information at car.v(5): object "HEX2" differs only in case from object "hex2" in the same scope File: D:/Study/verilog source code/asscar/car.v Line: 5
+Info (10281): Verilog HDL Declaration information at car.v(6): object "LEDR" differs only in case from object "ledr" in the same scope File: D:/Study/verilog source code/asscar/car.v Line: 6
+Info (10281): Verilog HDL Declaration information at car.v(7): object "LEDG" differs only in case from object "ledg" in the same scope File: D:/Study/verilog source code/asscar/car.v Line: 7
+Info (10281): Verilog HDL Declaration information at car.v(9): object "SW" differs only in case from object "sw" in the same scope File: D:/Study/verilog source code/asscar/car.v Line: 9
+Warning (10268): Verilog HDL information at led_run.v(74): always construct contains both blocking and non-blocking assignments File: D:/Study/verilog source code/asscar/led_run.v Line: 74
+Warning (10268): Verilog HDL information at seg7_run.v(116): always construct contains both blocking and non-blocking assignments File: D:/Study/verilog source code/asscar/seg7_run.v Line: 116
+Warning (10268): Verilog HDL information at seg7_run.v(186): always construct contains both blocking and non-blocking assignments File: D:/Study/verilog source code/asscar/seg7_run.v Line: 186
+Info (10281): Verilog HDL Declaration information at seg7_run.v(13): object "HEX1" differs only in case from object "hex1" in the same scope File: D:/Study/verilog source code/asscar/seg7_run.v Line: 13
+Info (10281): Verilog HDL Declaration information at seg7_run.v(13): object "HEX2" differs only in case from object "hex2" in the same scope File: D:/Study/verilog source code/asscar/seg7_run.v Line: 13
+Info (10281): Verilog HDL Declaration information at seg7_run.v(13): object "HEX3" differs only in case from object "hex3" in the same scope File: D:/Study/verilog source code/asscar/seg7_run.v Line: 13
+Info (10281): Verilog HDL Declaration information at seg7_run.v(13): object "HEX4" differs only in case from object "hex4" in the same scope File: D:/Study/verilog source code/asscar/seg7_run.v Line: 13
+Info (10281): Verilog HDL Declaration information at seg7_run.v(13): object "HEX5" differs only in case from object "hex5" in the same scope File: D:/Study/verilog source code/asscar/seg7_run.v Line: 13
+Info (10281): Verilog HDL Declaration information at seg7_run.v(13): object "HEX6" differs only in case from object "hex6" in the same scope File: D:/Study/verilog source code/asscar/seg7_run.v Line: 13
+Info (10281): Verilog HDL Declaration information at seg7_run.v(13): object "HEX7" differs only in case from object "hex7" in the same scope File: D:/Study/verilog source code/asscar/seg7_run.v Line: 13
+Warning (10268): Verilog HDL information at test.v(25): always construct contains both blocking and non-blocking assignments File: D:/Study/verilog source code/asscar/test.v Line: 25

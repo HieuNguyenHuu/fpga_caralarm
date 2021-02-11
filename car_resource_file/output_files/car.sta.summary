@@ -1,0 +1,197 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'seg7_run:re|IR_RECEIVE:u2|data_ready'
+Slack : -11.290
+TNS   : -1049.128
+
+Type  : Slow 1200mV 85C Model Setup 'reduce_HZ_10HZ:comb_11|Cout'
+Slack : -10.065
+TNS   : -1718.715
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -6.759
+TNS   : -552.189
+
+Type  : Slow 1200mV 85C Model Setup 'current_state.100'
+Slack : -4.935
+TNS   : -4.935
+
+Type  : Slow 1200mV 85C Model Setup 'IR_RECEIVE:u1|data_ready'
+Slack : -1.221
+TNS   : -4.884
+
+Type  : Slow 1200mV 85C Model Hold 'seg7_run:re|IR_RECEIVE:u2|data_ready'
+Slack : -2.101
+TNS   : -8.900
+
+Type  : Slow 1200mV 85C Model Hold 'reduce_HZ_10HZ:comb_11|Cout'
+Slack : -1.055
+TNS   : -2.085
+
+Type  : Slow 1200mV 85C Model Hold 'IR_RECEIVE:u1|data_ready'
+Slack : -0.230
+TNS   : -0.749
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.375
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'current_state.100'
+Slack : 3.313
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -337.500
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'reduce_HZ_10HZ:comb_11|Cout'
+Slack : -1.500
+TNS   : -421.500
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'seg7_run:re|IR_RECEIVE:u2|data_ready'
+Slack : -1.500
+TNS   : -148.500
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'IR_RECEIVE:u1|data_ready'
+Slack : -1.500
+TNS   : -6.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'div_to_1:c0|clk_out'
+Slack : -1.500
+TNS   : -1.500
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'current_state.100'
+Slack : 0.490
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'seg7_run:re|IR_RECEIVE:u2|data_ready'
+Slack : -10.222
+TNS   : -950.352
+
+Type  : Slow 1200mV 0C Model Setup 'reduce_HZ_10HZ:comb_11|Cout'
+Slack : -9.077
+TNS   : -1548.920
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -6.117
+TNS   : -482.967
+
+Type  : Slow 1200mV 0C Model Setup 'current_state.100'
+Slack : -4.384
+TNS   : -4.384
+
+Type  : Slow 1200mV 0C Model Setup 'IR_RECEIVE:u1|data_ready'
+Slack : -1.116
+TNS   : -4.464
+
+Type  : Slow 1200mV 0C Model Hold 'seg7_run:re|IR_RECEIVE:u2|data_ready'
+Slack : -1.885
+TNS   : -7.981
+
+Type  : Slow 1200mV 0C Model Hold 'reduce_HZ_10HZ:comb_11|Cout'
+Slack : -0.896
+TNS   : -2.214
+
+Type  : Slow 1200mV 0C Model Hold 'IR_RECEIVE:u1|data_ready'
+Slack : -0.101
+TNS   : -0.270
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.329
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'current_state.100'
+Slack : 2.968
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -337.500
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'reduce_HZ_10HZ:comb_11|Cout'
+Slack : -1.500
+TNS   : -421.500
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'seg7_run:re|IR_RECEIVE:u2|data_ready'
+Slack : -1.500
+TNS   : -148.500
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'IR_RECEIVE:u1|data_ready'
+Slack : -1.500
+TNS   : -6.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'div_to_1:c0|clk_out'
+Slack : -1.500
+TNS   : -1.500
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'current_state.100'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'seg7_run:re|IR_RECEIVE:u2|data_ready'
+Slack : -5.033
+TNS   : -462.668
+
+Type  : Fast 1200mV 0C Model Setup 'reduce_HZ_10HZ:comb_11|Cout'
+Slack : -4.360
+TNS   : -726.622
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -3.277
+TNS   : -169.261
+
+Type  : Fast 1200mV 0C Model Setup 'current_state.100'
+Slack : -2.043
+TNS   : -2.043
+
+Type  : Fast 1200mV 0C Model Setup 'IR_RECEIVE:u1|data_ready'
+Slack : -0.192
+TNS   : -0.768
+
+Type  : Fast 1200mV 0C Model Hold 'seg7_run:re|IR_RECEIVE:u2|data_ready'
+Slack : -1.180
+TNS   : -9.656
+
+Type  : Fast 1200mV 0C Model Hold 'reduce_HZ_10HZ:comb_11|Cout'
+Slack : -0.756
+TNS   : -1.933
+
+Type  : Fast 1200mV 0C Model Hold 'IR_RECEIVE:u1|data_ready'
+Slack : -0.045
+TNS   : -0.128
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.121
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'current_state.100'
+Slack : 1.740
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -229.673
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'reduce_HZ_10HZ:comb_11|Cout'
+Slack : -1.000
+TNS   : -281.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'seg7_run:re|IR_RECEIVE:u2|data_ready'
+Slack : -1.000
+TNS   : -99.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'IR_RECEIVE:u1|data_ready'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'div_to_1:c0|clk_out'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'current_state.100'
+Slack : 0.401
+TNS   : 0.000
+
+------------------------------------------------------------

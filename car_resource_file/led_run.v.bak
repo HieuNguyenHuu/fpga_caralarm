@@ -1,0 +1,39 @@
+module led_run (ledr,ledg,clk);
+input clk;
+output [17:0] ledr;
+output [8:0] ledg;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+endmodule

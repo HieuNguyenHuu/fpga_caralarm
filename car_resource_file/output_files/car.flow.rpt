@@ -1,0 +1,151 @@
+Flow report for car
+Wed Dec 11 13:01:10 2019
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------+
+; Flow Summary                                                                              ;
++------------------------------------+------------------------------------------------------+
+; Flow Status                        ; EDA Netlist Writer Failed - Wed Dec 11 13:01:10 2019 ;
+; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition          ;
+; Revision Name                      ; car                                                  ;
+; Top-level Entity Name              ; car                                                  ;
+; Family                             ; Cyclone IV GX                                        ;
+; Device                             ; EP4CGX150DF31C7                                      ;
+; Timing Models                      ; Final                                                ;
+; Total logic elements               ; 1,407 / 149,760 ( < 1 % )                            ;
+;     Total combinational functions  ; 1,379 / 149,760 ( < 1 % )                            ;
+;     Dedicated logic registers      ; 608 / 149,760 ( < 1 % )                              ;
+; Total registers                    ; 608                                                  ;
+; Total pins                         ; 116 / 508 ( 23 % )                                   ;
+; Total virtual pins                 ; 0                                                    ;
+; Total memory bits                  ; 0 / 6,635,520 ( 0 % )                                ;
+; Embedded Multiplier 9-bit elements ; 0 / 720 ( 0 % )                                      ;
+; Total GXB Receiver Channel PCS     ; 0 / 8 ( 0 % )                                        ;
+; Total GXB Receiver Channel PMA     ; 0 / 8 ( 0 % )                                        ;
+; Total GXB Transmitter Channel PCS  ; 0 / 8 ( 0 % )                                        ;
+; Total GXB Transmitter Channel PMA  ; 0 / 8 ( 0 % )                                        ;
+; Total PLLs                         ; 0 / 8 ( 0 % )                                        ;
++------------------------------------+------------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 12/11/2019 11:45:24 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; car                 ;
++-------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                            ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 105852876783519.157603952411400        ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:17     ; 1.0                     ; 4843 MB             ; 00:00:31                           ;
+; Fitter                    ; 00:00:29     ; 1.0                     ; 5611 MB             ; 00:00:40                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 4776 MB             ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4877 MB             ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4762 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:04     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4728 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
+; Total                     ; 00:01:03     ; --                      ; --                  ; 00:01:26                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; Admin            ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; Admin            ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; Admin            ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; Admin            ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; Admin            ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; Admin            ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; Admin            ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; Admin            ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; Admin            ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; Admin            ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; Admin            ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off car -c car
+quartus_fit --read_settings_files=off --write_settings_files=off car -c car
+quartus_asm --read_settings_files=off --write_settings_files=off car -c car
+quartus_sta car -c car
+quartus_eda --read_settings_files=off --write_settings_files=off car -c car
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off car -c car --vector_source="D:/Study/verilog source code/asscar/output_files/Waveform.vwf" --testbench_file="D:/Study/verilog source code/asscar/simulation/qsim/output_files/Waveform.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off car -c car --vector_source="D:/Study/verilog source code/asscar/output_files/Waveform.vwf" --testbench_file="D:/Study/verilog source code/asscar/simulation/qsim/output_files/Waveform.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off car -c car --vector_source="D:/Study/verilog source code/asscar/Waveform.vwf" --testbench_file="D:/Study/verilog source code/asscar/simulation/qsim/Waveform.vwf.vt"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Study/verilog source code/asscar/simulation/qsim/" car -c car
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off car -c car --vector_source="D:/Study/verilog source code/irresiver/trafficLight-master/test_IR_RECEIVE.vwf" --testbench_file="D:/Study/verilog source code/asscar/simulation/qsim/../irresiver/trafficLight-master/test_IR_RECEIVE.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off car -c car --vector_source="D:/Study/verilog source code/irresiver/trafficLight-master/test_IR_RECEIVE.vwf" --testbench_file="D:/Study/verilog source code/asscar/simulation/qsim/../irresiver/trafficLight-master/test_IR_RECEIVE.vwf.vt"
+
+
+

@@ -1,0 +1,1088 @@
+Analysis & Synthesis report for car
+Wed Dec 11 11:45:41 2019
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |car|current_state
+  9. State Machine - |car|select_state
+ 10. State Machine - |car|seg7_run:re|IR_RECEIVE:u2|state
+ 11. State Machine - |car|lcd_run:dd|mLCD_ST
+ 12. State Machine - |car|lcd_run:dd|LCD_Controller:u0|ST
+ 13. State Machine - |car|IR_RECEIVE:u1|state
+ 14. User-Specified and Inferred Latches
+ 15. Registers Removed During Synthesis
+ 16. Removed Registers Triggering Further Register Optimizations
+ 17. General Register Statistics
+ 18. Inverted Register Statistics
+ 19. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 20. Parameter Settings for User Entity Instance: IR_RECEIVE:u1
+ 21. Parameter Settings for User Entity Instance: div_to_1:c0
+ 22. Parameter Settings for User Entity Instance: led_run:d
+ 23. Parameter Settings for User Entity Instance: led_run:d|effect2:comb_1155
+ 24. Parameter Settings for User Entity Instance: lcd_run:dd
+ 25. Parameter Settings for User Entity Instance: lcd_run:dd|div_to_1:clock_out
+ 26. Parameter Settings for User Entity Instance: lcd_run:dd|LCD_Controller:u0
+ 27. Parameter Settings for User Entity Instance: seg7_run:re
+ 28. Parameter Settings for User Entity Instance: seg7_run:re|IR_RECEIVE:u2
+ 29. Port Connectivity Checks: "seg7_run:re|IR_RECEIVE:u2"
+ 30. Port Connectivity Checks: "seg7_run:re"
+ 31. Port Connectivity Checks: "lcd_run:dd|div_to_1:clock_out"
+ 32. Port Connectivity Checks: "lcd_run:dd"
+ 33. Port Connectivity Checks: "led_run:d|effect2:comb_1155"
+ 34. Port Connectivity Checks: "led_run:d"
+ 35. Port Connectivity Checks: "IR_RECEIVE:u1"
+ 36. Post-Synthesis Netlist Statistics for Top Partition
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
+ 39. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Dec 11 11:45:41 2019       ;
+; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name                      ; car                                         ;
+; Top-level Entity Name              ; car                                         ;
+; Family                             ; Cyclone IV GX                               ;
+; Total logic elements               ; 1,406                                       ;
+;     Total combinational functions  ; 1,379                                       ;
+;     Dedicated logic registers      ; 608                                         ;
+; Total registers                    ; 608                                         ;
+; Total pins                         ; 116                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total GXB Receiver Channel PCS     ; 0                                           ;
+; Total GXB Receiver Channel PMA     ; 0                                           ;
+; Total GXB Transmitter Channel PCS  ; 0                                           ;
+; Total GXB Transmitter Channel PMA  ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CGX150DF31C7    ;                    ;
+; Top-level entity name                                                      ; car                ; car                ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; car.v                            ; yes             ; User Verilog HDL File  ; D:/Study/verilog source code/asscar/car.v            ;         ;
+; led_run.v                        ; yes             ; User Verilog HDL File  ; D:/Study/verilog source code/asscar/led_run.v        ;         ;
+; LCD_Controller.v                 ; yes             ; User Verilog HDL File  ; D:/Study/verilog source code/asscar/LCD_Controller.v ;         ;
+; lcd_run.v                        ; yes             ; User Verilog HDL File  ; D:/Study/verilog source code/asscar/lcd_run.v        ;         ;
+; seg7_run.v                       ; yes             ; User Verilog HDL File  ; D:/Study/verilog source code/asscar/seg7_run.v       ;         ;
+; IR_RECEIVE.v                     ; yes             ; User Verilog HDL File  ; D:/Study/verilog source code/asscar/IR_RECEIVE.v     ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++--------------------------+-----------------------------+
+; Resource                 ; Usage                       ;
++--------------------------+-----------------------------+
+; I/O pins                 ; 116                         ;
+;                          ;                             ;
+; DSP block 9-bit elements ; 0                           ;
+;                          ;                             ;
+; Maximum fan-out node     ; reduce_HZ_10HZ:comb_11|Cout ;
+; Maximum fan-out          ; 282                         ;
+; Total fan-out            ; 6288                        ;
+; Average fan-out          ; 2.83                        ;
++--------------------------+-----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                    ;
++-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------+----------------+--------------+
+; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name    ; Library Name ;
++-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------+----------------+--------------+
+; |car                        ; 1379 (31)           ; 608 (10)                  ; 0           ; 0            ; 0       ; 0         ; 0         ; 116  ; 0            ; |car                              ; car            ; work         ;
+;    |IR_RECEIVE:u1|          ; 127 (127)           ; 99 (99)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |car|IR_RECEIVE:u1                ; IR_RECEIVE     ; work         ;
+;    |div_to_1:c0|            ; 43 (43)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |car|div_to_1:c0                  ; div_to_1       ; work         ;
+;    |lcd_run:dd|             ; 232 (211)           ; 51 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |car|lcd_run:dd                   ; lcd_run        ; work         ;
+;       |LCD_Controller:u0|   ; 21 (21)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |car|lcd_run:dd|LCD_Controller:u0 ; LCD_Controller ; work         ;
+;    |led_run:d|              ; 431 (237)           ; 235 (121)                 ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |car|led_run:d                    ; led_run        ; work         ;
+;       |effect2:comb_1155|   ; 194 (194)           ; 114 (114)                 ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |car|led_run:d|effect2:comb_1155  ; effect2        ; work         ;
+;    |reduce_HZ_10HZ:comb_11| ; 58 (58)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |car|reduce_HZ_10HZ:comb_11       ; reduce_HZ_10HZ ; work         ;
+;    |seg7_run:re|            ; 457 (451)           ; 154 (145)                 ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |car|seg7_run:re                  ; seg7_run       ; work         ;
+;       |IR_RECEIVE:u2|       ; 6 (6)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |car|seg7_run:re|IR_RECEIVE:u2    ; IR_RECEIVE     ; work         ;
++-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------+
+; State Machine - |car|current_state                                                                                    ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+; Name              ; current_state.011 ; current_state.010 ; current_state.001 ; current_state.000 ; current_state.100 ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+; current_state.000 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ;
+; current_state.001 ; 0                 ; 0                 ; 1                 ; 1                 ; 0                 ;
+; current_state.010 ; 0                 ; 1                 ; 0                 ; 1                 ; 0                 ;
+; current_state.011 ; 1                 ; 0                 ; 0                 ; 1                 ; 0                 ;
+; current_state.100 ; 0                 ; 0                 ; 0                 ; 1                 ; 1                 ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |car|select_state                                                       ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+; Name            ; select_state.11 ; select_state.10 ; select_state.01 ; select_state.00 ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+; select_state.00 ; 0               ; 0               ; 0               ; 0               ;
+; select_state.01 ; 0               ; 0               ; 1               ; 1               ;
+; select_state.10 ; 0               ; 1               ; 0               ; 1               ;
+; select_state.11 ; 1               ; 0               ; 0               ; 1               ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |car|seg7_run:re|IR_RECEIVE:u2|state          ;
++----------------+------------+----------------+----------------+
+; Name           ; state.IDLE ; state.DATAREAD ; state.GUIDANCE ;
++----------------+------------+----------------+----------------+
+; state.IDLE     ; 0          ; 0              ; 0              ;
+; state.GUIDANCE ; 1          ; 0              ; 1              ;
+; state.DATAREAD ; 1          ; 1              ; 0              ;
++----------------+------------+----------------+----------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------+
+; State Machine - |car|lcd_run:dd|mLCD_ST                                            ;
++----------------+----------------+----------------+----------------+----------------+
+; Name           ; mLCD_ST.000011 ; mLCD_ST.000010 ; mLCD_ST.000001 ; mLCD_ST.000000 ;
++----------------+----------------+----------------+----------------+----------------+
+; mLCD_ST.000000 ; 0              ; 0              ; 0              ; 0              ;
+; mLCD_ST.000001 ; 0              ; 0              ; 1              ; 1              ;
+; mLCD_ST.000010 ; 0              ; 1              ; 0              ; 1              ;
+; mLCD_ST.000011 ; 1              ; 0              ; 0              ; 1              ;
++----------------+----------------+----------------+----------------+----------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------+
+; State Machine - |car|lcd_run:dd|LCD_Controller:u0|ST ;
++-------+-------+-------+-------+----------------------+
+; Name  ; ST.11 ; ST.10 ; ST.01 ; ST.00                ;
++-------+-------+-------+-------+----------------------+
+; ST.00 ; 0     ; 0     ; 0     ; 0                    ;
+; ST.01 ; 0     ; 0     ; 1     ; 1                    ;
+; ST.10 ; 0     ; 1     ; 0     ; 1                    ;
+; ST.11 ; 1     ; 0     ; 0     ; 1                    ;
++-------+-------+-------+-------+----------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |car|IR_RECEIVE:u1|state                      ;
++----------------+------------+----------------+----------------+
+; Name           ; state.IDLE ; state.DATAREAD ; state.GUIDANCE ;
++----------------+------------+----------------+----------------+
+; state.IDLE     ; 0          ; 0              ; 0              ;
+; state.GUIDANCE ; 1          ; 0              ; 1              ;
+; state.DATAREAD ; 1          ; 1              ; 0              ;
++----------------+------------+----------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; seg7_run:re|hex_out[0]                             ; current_state.100   ; yes                    ;
+; seg7_run:re|hex_out[1]                             ; current_state.100   ; yes                    ;
+; seg7_run:re|hex_out[2]                             ; current_state.100   ; yes                    ;
+; seg7_run:re|hex_out[3]                             ; current_state.100   ; yes                    ;
+; seg7_run:re|hex_out[4]                             ; current_state.100   ; yes                    ;
+; seg7_run:re|hex_out[5]                             ; current_state.100   ; yes                    ;
+; seg7_run:re|hex_out[6]                             ; current_state.100   ; yes                    ;
+; Number of user-specified and inferred latches = 7  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                      ;
++--------------------------------------------+--------------------------------------------+
+; Register name                              ; Reason for Removal                         ;
++--------------------------------------------+--------------------------------------------+
+; seg7_run:re|i[1..14]                       ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[0][0]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[0][1]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[0][2]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[0][3]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[0][4]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[0][5]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[0][6]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[1][0]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[1][1]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[1][2]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[1][3]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[1][4]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[1][5]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[1][6]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[2][0]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[2][1]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[2][2]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[2][3]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[2][4]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[2][5]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[2][6]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[3][0]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[3][1]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[3][2]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[3][3]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[3][4]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[3][5]               ; Stuck at VCC due to stuck port data_in     ;
+; seg7_run:re|hexarrayck[3][6]               ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|i[15..31]                      ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|iii[1..31]                     ; Stuck at GND due to stuck port data_in     ;
+; led_run:d|iii[1..31]                       ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hexarray[0][1]                 ; Merged with seg7_run:re|hexarray[0][0]     ;
+; seg7_run:re|hexarray[0][2]                 ; Merged with seg7_run:re|hexarray[0][0]     ;
+; seg7_run:re|hexarray[0][3]                 ; Merged with seg7_run:re|hexarray[0][0]     ;
+; seg7_run:re|hexarray[0][4]                 ; Merged with seg7_run:re|hexarray[0][0]     ;
+; seg7_run:re|hexarray[0][5]                 ; Merged with seg7_run:re|hexarray[0][0]     ;
+; seg7_run:re|hexarray[0][6]                 ; Merged with seg7_run:re|hexarray[0][0]     ;
+; seg7_run:re|hexarray[1][1]                 ; Merged with seg7_run:re|hexarray[1][0]     ;
+; seg7_run:re|hexarray[1][2]                 ; Merged with seg7_run:re|hexarray[1][0]     ;
+; seg7_run:re|hexarray[1][3]                 ; Merged with seg7_run:re|hexarray[1][0]     ;
+; seg7_run:re|hexarray[1][4]                 ; Merged with seg7_run:re|hexarray[1][0]     ;
+; seg7_run:re|hexarray[1][5]                 ; Merged with seg7_run:re|hexarray[1][0]     ;
+; seg7_run:re|hexarray[1][6]                 ; Merged with seg7_run:re|hexarray[1][0]     ;
+; seg7_run:re|hexarray[2][1]                 ; Merged with seg7_run:re|hexarray[2][0]     ;
+; seg7_run:re|hexarray[2][2]                 ; Merged with seg7_run:re|hexarray[2][0]     ;
+; seg7_run:re|hexarray[2][3]                 ; Merged with seg7_run:re|hexarray[2][0]     ;
+; seg7_run:re|hexarray[2][4]                 ; Merged with seg7_run:re|hexarray[2][0]     ;
+; seg7_run:re|hexarray[2][5]                 ; Merged with seg7_run:re|hexarray[2][0]     ;
+; seg7_run:re|hexarray[2][6]                 ; Merged with seg7_run:re|hexarray[2][0]     ;
+; seg7_run:re|hexarray[3][1]                 ; Merged with seg7_run:re|hexarray[3][0]     ;
+; seg7_run:re|hexarray[3][2]                 ; Merged with seg7_run:re|hexarray[3][0]     ;
+; seg7_run:re|hexarray[3][3]                 ; Merged with seg7_run:re|hexarray[3][0]     ;
+; seg7_run:re|hexarray[3][4]                 ; Merged with seg7_run:re|hexarray[3][0]     ;
+; seg7_run:re|hexarray[3][5]                 ; Merged with seg7_run:re|hexarray[3][0]     ;
+; seg7_run:re|hexarray[3][6]                 ; Merged with seg7_run:re|hexarray[3][0]     ;
+; led_run:d|ledss32[1..17]                   ; Merged with led_run:d|ledss32[0]           ;
+; led_run:d|leds2[9]                         ; Merged with led_run:d|leds1[1]             ;
+; led_run:d|leds2[8]                         ; Merged with led_run:d|leds1[2]             ;
+; led_run:d|leds2[7]                         ; Merged with led_run:d|leds1[3]             ;
+; led_run:d|leds2[6]                         ; Merged with led_run:d|leds1[4]             ;
+; led_run:d|leds2[5]                         ; Merged with led_run:d|leds1[5]             ;
+; led_run:d|leds2[4]                         ; Merged with led_run:d|leds1[6]             ;
+; led_run:d|leds2[3]                         ; Merged with led_run:d|leds1[7]             ;
+; led_run:d|leds2[2]                         ; Merged with led_run:d|leds1[8]             ;
+; led_run:d|leds2[1]                         ; Merged with led_run:d|leds1[9]             ;
+; seg7_run:re|iss[4..9,11..31]               ; Merged with seg7_run:re|iss[10]            ;
+; seg7_run:re|d[2..9,11..31]                 ; Merged with seg7_run:re|d[10]              ;
+; seg7_run:re|hex[1..6]                      ; Merged with seg7_run:re|hex[0]             ;
+; seg7_run:re|hex1[1..6]                     ; Merged with seg7_run:re|hex1[0]            ;
+; led_run:d|leds2[10]                        ; Merged with led_run:d|leds1[0]             ;
+; led_run:d|leds2[0]                         ; Merged with led_run:d|leds1[10]            ;
+; seg7_run:re|iss[10]                        ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|d[10]                          ; Stuck at GND due to stuck port data_in     ;
+; seg7_run:re|hex[0]                         ; Merged with seg7_run:re|i[0]               ;
+; led_run:d|position[0]                      ; Merged with seg7_run:re|i[0]               ;
+; seg7_run:re|iisck[31]                      ; Stuck at GND due to stuck port data_in     ;
+; current_state~2                            ; Lost fanout                                ;
+; current_state~3                            ; Lost fanout                                ;
+; select_state~2                             ; Lost fanout                                ;
+; select_state~3                             ; Lost fanout                                ;
+; lcd_run:dd|mLCD_ST~6                       ; Lost fanout                                ;
+; lcd_run:dd|mLCD_ST~7                       ; Lost fanout                                ;
+; lcd_run:dd|mLCD_ST~8                       ; Lost fanout                                ;
+; lcd_run:dd|mLCD_ST~9                       ; Lost fanout                                ;
+; lcd_run:dd|mLCD_ST~10                      ; Lost fanout                                ;
+; lcd_run:dd|mLCD_ST~11                      ; Lost fanout                                ;
+; lcd_run:dd|LCD_Controller:u0|ST~6          ; Lost fanout                                ;
+; lcd_run:dd|LCD_Controller:u0|ST~7          ; Lost fanout                                ;
+; seg7_run:re|IR_RECEIVE:u2|data_buf[16]     ; Merged with IR_RECEIVE:u1|data_buf[16]     ;
+; seg7_run:re|IR_RECEIVE:u2|data_buf[17]     ; Merged with IR_RECEIVE:u1|data_buf[17]     ;
+; seg7_run:re|IR_RECEIVE:u2|data_buf[19]     ; Merged with IR_RECEIVE:u1|data_buf[19]     ;
+; seg7_run:re|IR_RECEIVE:u2|data_buf[20]     ; Merged with IR_RECEIVE:u1|data_buf[20]     ;
+; seg7_run:re|IR_RECEIVE:u2|data_buf[21]     ; Merged with IR_RECEIVE:u1|data_buf[21]     ;
+; seg7_run:re|IR_RECEIVE:u2|data_buf[22]     ; Merged with IR_RECEIVE:u1|data_buf[22]     ;
+; seg7_run:re|IR_RECEIVE:u2|data_buf[23]     ; Merged with IR_RECEIVE:u1|data_buf[23]     ;
+; seg7_run:re|IR_RECEIVE:u2|data_buf[18]     ; Merged with IR_RECEIVE:u1|data_buf[18]     ;
+; seg7_run:re|IR_RECEIVE:u2|data[31]         ; Merged with IR_RECEIVE:u1|data[31]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[30]         ; Merged with IR_RECEIVE:u1|data[30]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[29]         ; Merged with IR_RECEIVE:u1|data[29]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[28]         ; Merged with IR_RECEIVE:u1|data[28]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[27]         ; Merged with IR_RECEIVE:u1|data[27]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[26]         ; Merged with IR_RECEIVE:u1|data[26]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[25]         ; Merged with IR_RECEIVE:u1|data[25]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[24]         ; Merged with IR_RECEIVE:u1|data[24]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[23]         ; Merged with IR_RECEIVE:u1|data[23]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[22]         ; Merged with IR_RECEIVE:u1|data[22]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[21]         ; Merged with IR_RECEIVE:u1|data[21]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[20]         ; Merged with IR_RECEIVE:u1|data[20]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[19]         ; Merged with IR_RECEIVE:u1|data[19]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[18]         ; Merged with IR_RECEIVE:u1|data[18]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[17]         ; Merged with IR_RECEIVE:u1|data[17]         ;
+; seg7_run:re|IR_RECEIVE:u2|data[16]         ; Merged with IR_RECEIVE:u1|data[16]         ;
+; seg7_run:re|IR_RECEIVE:u2|bitcount[5]      ; Merged with IR_RECEIVE:u1|bitcount[5]      ;
+; seg7_run:re|IR_RECEIVE:u2|bitcount[4]      ; Merged with IR_RECEIVE:u1|bitcount[4]      ;
+; seg7_run:re|IR_RECEIVE:u2|bitcount[3]      ; Merged with IR_RECEIVE:u1|bitcount[3]      ;
+; seg7_run:re|IR_RECEIVE:u2|bitcount[2]      ; Merged with IR_RECEIVE:u1|bitcount[2]      ;
+; seg7_run:re|IR_RECEIVE:u2|bitcount[1]      ; Merged with IR_RECEIVE:u1|bitcount[1]      ;
+; seg7_run:re|IR_RECEIVE:u2|bitcount[0]      ; Merged with IR_RECEIVE:u1|bitcount[0]      ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[17]   ; Merged with IR_RECEIVE:u1|data_count[17]   ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[16]   ; Merged with IR_RECEIVE:u1|data_count[16]   ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[15]   ; Merged with IR_RECEIVE:u1|data_count[15]   ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[14]   ; Merged with IR_RECEIVE:u1|data_count[14]   ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[13]   ; Merged with IR_RECEIVE:u1|data_count[13]   ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[12]   ; Merged with IR_RECEIVE:u1|data_count[12]   ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[11]   ; Merged with IR_RECEIVE:u1|data_count[11]   ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[10]   ; Merged with IR_RECEIVE:u1|data_count[10]   ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[9]    ; Merged with IR_RECEIVE:u1|data_count[9]    ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[8]    ; Merged with IR_RECEIVE:u1|data_count[8]    ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[7]    ; Merged with IR_RECEIVE:u1|data_count[7]    ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[6]    ; Merged with IR_RECEIVE:u1|data_count[6]    ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[5]    ; Merged with IR_RECEIVE:u1|data_count[5]    ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[4]    ; Merged with IR_RECEIVE:u1|data_count[4]    ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[3]    ; Merged with IR_RECEIVE:u1|data_count[3]    ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[2]    ; Merged with IR_RECEIVE:u1|data_count[2]    ;
+; seg7_run:re|IR_RECEIVE:u2|state.DATAREAD   ; Merged with IR_RECEIVE:u1|state.DATAREAD   ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[1]    ; Merged with IR_RECEIVE:u1|data_count[1]    ;
+; seg7_run:re|IR_RECEIVE:u2|data_count[0]    ; Merged with IR_RECEIVE:u1|data_count[0]    ;
+; seg7_run:re|IR_RECEIVE:u2|data_count_flag  ; Merged with IR_RECEIVE:u1|data_count_flag  ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[17]  ; Merged with IR_RECEIVE:u1|state_count[17]  ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[16]  ; Merged with IR_RECEIVE:u1|state_count[16]  ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[15]  ; Merged with IR_RECEIVE:u1|state_count[15]  ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[14]  ; Merged with IR_RECEIVE:u1|state_count[14]  ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[13]  ; Merged with IR_RECEIVE:u1|state_count[13]  ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[12]  ; Merged with IR_RECEIVE:u1|state_count[12]  ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[11]  ; Merged with IR_RECEIVE:u1|state_count[11]  ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[10]  ; Merged with IR_RECEIVE:u1|state_count[10]  ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[9]   ; Merged with IR_RECEIVE:u1|state_count[9]   ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[8]   ; Merged with IR_RECEIVE:u1|state_count[8]   ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[7]   ; Merged with IR_RECEIVE:u1|state_count[7]   ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[6]   ; Merged with IR_RECEIVE:u1|state_count[6]   ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[5]   ; Merged with IR_RECEIVE:u1|state_count[5]   ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[4]   ; Merged with IR_RECEIVE:u1|state_count[4]   ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[3]   ; Merged with IR_RECEIVE:u1|state_count[3]   ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[2]   ; Merged with IR_RECEIVE:u1|state_count[2]   ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[1]   ; Merged with IR_RECEIVE:u1|state_count[1]   ;
+; seg7_run:re|IR_RECEIVE:u2|state_count[0]   ; Merged with IR_RECEIVE:u1|state_count[0]   ;
+; seg7_run:re|IR_RECEIVE:u2|state.GUIDANCE   ; Merged with IR_RECEIVE:u1|state.GUIDANCE   ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[17]   ; Merged with IR_RECEIVE:u1|idle_count[17]   ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[16]   ; Merged with IR_RECEIVE:u1|idle_count[16]   ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[15]   ; Merged with IR_RECEIVE:u1|idle_count[15]   ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[14]   ; Merged with IR_RECEIVE:u1|idle_count[14]   ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[13]   ; Merged with IR_RECEIVE:u1|idle_count[13]   ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[12]   ; Merged with IR_RECEIVE:u1|idle_count[12]   ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[11]   ; Merged with IR_RECEIVE:u1|idle_count[11]   ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[10]   ; Merged with IR_RECEIVE:u1|idle_count[10]   ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[9]    ; Merged with IR_RECEIVE:u1|idle_count[9]    ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[8]    ; Merged with IR_RECEIVE:u1|idle_count[8]    ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[7]    ; Merged with IR_RECEIVE:u1|idle_count[7]    ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[6]    ; Merged with IR_RECEIVE:u1|idle_count[6]    ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[5]    ; Merged with IR_RECEIVE:u1|idle_count[5]    ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[4]    ; Merged with IR_RECEIVE:u1|idle_count[4]    ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[3]    ; Merged with IR_RECEIVE:u1|idle_count[3]    ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[2]    ; Merged with IR_RECEIVE:u1|idle_count[2]    ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[1]    ; Merged with IR_RECEIVE:u1|idle_count[1]    ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count[0]    ; Merged with IR_RECEIVE:u1|idle_count[0]    ;
+; seg7_run:re|IR_RECEIVE:u2|state.IDLE       ; Merged with IR_RECEIVE:u1|state.IDLE       ;
+; seg7_run:re|IR_RECEIVE:u2|state_count_flag ; Merged with IR_RECEIVE:u1|state_count_flag ;
+; seg7_run:re|IR_RECEIVE:u2|idle_count_flag  ; Merged with IR_RECEIVE:u1|idle_count_flag  ;
+; Total Number of Removed Registers = 348    ;                                            ;
++--------------------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                       ;
++------------------------------+---------------------------+----------------------------------------+
+; Register name                ; Reason for Removal        ; Registers Removed due to This Register ;
++------------------------------+---------------------------+----------------------------------------+
+; seg7_run:re|hexarrayck[2][0] ; Stuck at GND              ; seg7_run:re|iisck[31]                  ;
+;                              ; due to stuck port data_in ;                                        ;
++------------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 608   ;
+; Number of registers using Synchronous Clear  ; 257   ;
+; Number of registers using Synchronous Load   ; 37    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 389   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------+
+; Inverted Register Statistics                       ;
++------------------------------------------+---------+
+; Inverted Register                        ; Fan out ;
++------------------------------------------+---------+
+; led_run:d|effect2:comb_1155|ledss31s[1]  ; 3       ;
+; led_run:d|effect2:comb_1155|ledss31s[3]  ; 3       ;
+; led_run:d|effect2:comb_1155|ledss31s[5]  ; 3       ;
+; led_run:d|effect2:comb_1155|ledss31s[7]  ; 3       ;
+; led_run:d|leds1[9]                       ; 4       ;
+; led_run:d|effect2:comb_1155|ledss31s[9]  ; 3       ;
+; led_run:d|effect2:comb_1155|ledss31s[11] ; 3       ;
+; led_run:d|effect2:comb_1155|ledss31s[13] ; 3       ;
+; led_run:d|effect2:comb_1155|ledss31s[15] ; 3       ;
+; led_run:d|effect2:comb_1155|ledss31s[17] ; 3       ;
+; led_run:d|ledss31[0]                     ; 3       ;
+; led_run:d|ledss31[2]                     ; 3       ;
+; led_run:d|ledss31[4]                     ; 3       ;
+; led_run:d|ledss31[6]                     ; 3       ;
+; key                                      ; 1       ;
+; led_run:d|position[3]                    ; 12      ;
+; led_run:d|leds1[10]                      ; 1       ;
+; led_run:d|ledss31[8]                     ; 2       ;
+; Total number of inverted registers = 18  ;         ;
++------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |car|lcd_run:dd|LUT_INDEX[2]                  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |car|led_run:d|ledss31[7]                     ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |car|seg7_run:re|IR_RECEIVE:u2|bitcount[3]    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |car|lcd_run:dd|LCD_Controller:u0|oDone       ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |car|IR_RECEIVE:u1|bitcount[3]                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |car|led_run:d|dem[16]                        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |car|seg7_run:re|dem[28]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |car|reduce_HZ_10HZ:comb_11|s[24]             ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |car|led_run:d|effect2:comb_1155|position[13] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |car|led_run:d|effect2:comb_1155|dwd[28]      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |car|led_run:d|positions[23]                  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |car|seg7_run:re|ii[30]                       ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |car|lcd_run:dd|mLCD_DATA[5]                  ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |car|lcd_run:dd|mLCD_DATA[1]                  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |car|seg7_run:re|iisck[9]                     ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |car|led_run:d|effect2:comb_1155|ledss31s[8]  ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |car|seg7_run:re|hexarrayt[3][2]              ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |car|seg7_run:re|hexarrayt[2][1]              ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |car|seg7_run:re|hexarrayt[1][1]              ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |car|seg7_run:re|hexarrayt[0][6]              ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |car|led_run:d|ledss31[2]                     ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |car|led_run:d|effect2:comb_1155|ledss31s[11] ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |car|led_run:d|ledr[17]                       ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |car|seg7_run:re|Mux4                         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |car|led_run:d|ledr                           ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |car|seg7_run:re|HEX6[4]                      ;
+; 4:1                ; 28 bits   ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |car|seg7_run:re|HEX0[4]                      ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |car|seg7_run:re|Mux9                         ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |car|seg7_run:re|IR_RECEIVE:u2|Selector1      ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |car|IR_RECEIVE:u1|Selector0                  ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |car|lcd_run:dd|mLCD_ST                       ;
+; 256:1              ; 4 bits    ; 680 LEs       ; 12 LEs               ; 668 LEs                ; No         ; |car|Selector3                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IR_RECEIVE:u1 ;
++-------------------+--------+-------------------------------+
+; Parameter Name    ; Value  ; Type                          ;
++-------------------+--------+-------------------------------+
+; IDLE              ; 00     ; Unsigned Binary               ;
+; GUIDANCE          ; 01     ; Unsigned Binary               ;
+; DATAREAD          ; 10     ; Unsigned Binary               ;
+; IDLE_HIGH_DUR     ; 262143 ; Signed Integer                ;
+; GUIDE_LOW_DUR     ; 230000 ; Signed Integer                ;
+; GUIDE_HIGH_DUR    ; 210000 ; Signed Integer                ;
+; DATA_HIGH_DUR     ; 41500  ; Signed Integer                ;
+; BIT_AVAILABLE_DUR ; 20000  ; Signed Integer                ;
++-------------------+--------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: div_to_1:c0 ;
++----------------+---------+-------------------------------+
+; Parameter Name ; Value   ; Type                          ;
++----------------+---------+-------------------------------+
+; scale          ; 5000000 ; Signed Integer                ;
++----------------+---------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: led_run:d ;
++----------------+--------------------+------------------+
+; Parameter Name ; Value              ; Type             ;
++----------------+--------------------+------------------+
+; LEDS_INIT1     ; 11000000000        ; Unsigned Binary  ;
+; LEDS_INIT2     ; 00000000011        ; Unsigned Binary  ;
+; DIR_INIT       ; 1                  ; Signed Integer   ;
+; ledrs          ; 000000000000000000 ; Unsigned Binary  ;
+; led31          ; 101010101          ; Unsigned Binary  ;
+; ledrf          ; 111111111111111111 ; Unsigned Binary  ;
++----------------+--------------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: led_run:d|effect2:comb_1155 ;
++----------------+--------------------+------------------------------------+
+; Parameter Name ; Value              ; Type                               ;
++----------------+--------------------+------------------------------------+
+; led31s         ; 101010101010101010 ; Unsigned Binary                    ;
+; ledss31ss      ; 000000000000000000 ; Unsigned Binary                    ;
++----------------+--------------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd_run:dd ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; LCD_INTIAL     ; 0     ; Signed Integer                 ;
+; LCD_LINE1      ; 5     ; Signed Integer                 ;
+; LCD_CH_LINE    ; 21    ; Signed Integer                 ;
+; LCD_LINE2      ; 22    ; Signed Integer                 ;
+; LUT_SIZE       ; 38    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd_run:dd|div_to_1:clock_out ;
++----------------+----------+------------------------------------------------+
+; Parameter Name ; Value    ; Type                                           ;
++----------------+----------+------------------------------------------------+
+; scale          ; 25000000 ; Signed Integer                                 ;
++----------------+----------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd_run:dd|LCD_Controller:u0 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; CLK_Divide     ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seg7_run:re ;
++----------------+---------+-------------------------------+
+; Parameter Name ; Value   ; Type                          ;
++----------------+---------+-------------------------------+
+; zero           ; 1000000 ; Unsigned Binary               ;
+; one            ; 1111001 ; Unsigned Binary               ;
+; two            ; 0100100 ; Unsigned Binary               ;
+; three          ; 0110000 ; Unsigned Binary               ;
+; four           ; 0011001 ; Unsigned Binary               ;
+; five           ; 0010010 ; Unsigned Binary               ;
+; six            ; 0000010 ; Unsigned Binary               ;
+; seven          ; 1111000 ; Unsigned Binary               ;
+; eight          ; 0000000 ; Unsigned Binary               ;
+; nine           ; 0011000 ; Unsigned Binary               ;
+; pl             ; 0001100 ; Unsigned Binary               ;
+; al             ; 0001000 ; Unsigned Binary               ;
+; sl             ; 0010010 ; Unsigned Binary               ;
+; blank          ; 1111111 ; Unsigned Binary               ;
++----------------+---------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seg7_run:re|IR_RECEIVE:u2 ;
++-------------------+--------+-------------------------------------------+
+; Parameter Name    ; Value  ; Type                                      ;
++-------------------+--------+-------------------------------------------+
+; IDLE              ; 00     ; Unsigned Binary                           ;
+; GUIDANCE          ; 01     ; Unsigned Binary                           ;
+; DATAREAD          ; 10     ; Unsigned Binary                           ;
+; IDLE_HIGH_DUR     ; 262143 ; Signed Integer                            ;
+; GUIDE_LOW_DUR     ; 230000 ; Signed Integer                            ;
+; GUIDE_HIGH_DUR    ; 210000 ; Signed Integer                            ;
+; DATA_HIGH_DUR     ; 41500  ; Signed Integer                            ;
+; BIT_AVAILABLE_DUR ; 20000  ; Signed Integer                            ;
++-------------------+--------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seg7_run:re|IR_RECEIVE:u2"                                                                   ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; iRST_n        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; oDATA[31..24] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; oDATA[15..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seg7_run:re"                                                                                ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; enableir     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; input_string ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_run:dd|div_to_1:clock_out"                                                         ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; clk_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "lcd_run:dd"          ;
++---------------+-------+----------+--------------+
+; Port          ; Type  ; Severity ; Details      ;
++---------------+-------+----------+--------------+
+; start         ; Input ; Info     ; Stuck at VCC ;
+; enable        ; Input ; Info     ; Stuck at VCC ;
+; select_lcd[3] ; Input ; Info     ; Stuck at GND ;
++---------------+-------+----------+--------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "led_run:d|effect2:comb_1155" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                  ;
++------+-------+----------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "led_run:d"                                                                                ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; ledg[8..7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "IR_RECEIVE:u1"                                                                               ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; iRST_n        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; oDATA[31..24] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; oDATA[15..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 116                         ;
+; cycloneiii_ff         ; 608                         ;
+;     ENA               ; 202                         ;
+;     ENA SCLR          ; 186                         ;
+;     ENA SLD           ; 1                           ;
+;     SCLR              ; 71                          ;
+;     SLD               ; 36                          ;
+;     plain             ; 112                         ;
+; cycloneiii_lcell_comb ; 1379                        ;
+;     arith             ; 478                         ;
+;         2 data inputs ; 472                         ;
+;         3 data inputs ; 6                           ;
+;     normal            ; 901                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 22                          ;
+;         2 data inputs ; 114                         ;
+;         3 data inputs ; 115                         ;
+;         4 data inputs ; 648                         ;
+;                       ;                             ;
+; Max LUT depth         ; 13.10                       ;
+; Average LUT depth     ; 5.80                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Wed Dec 11 11:45:24 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off car -c car
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning (10090): Verilog HDL syntax warning at car.v(350): extra block comment delimiter characters /* within block comment File: D:/Study/verilog source code/asscar/car.v Line: 350
+Info (12021): Found 3 design units, including 3 entities, in source file car.v
+    Info (12023): Found entity 1: car File: D:/Study/verilog source code/asscar/car.v Line: 1
+    Info (12023): Found entity 2: reduce_HZ_10HZ File: D:/Study/verilog source code/asscar/car.v Line: 423
+    Info (12023): Found entity 3: div_to_1 File: D:/Study/verilog source code/asscar/car.v Line: 444
+Warning (10229): Verilog HDL Expression warning at led_run.v(70): truncated literal to match 18 bits File: D:/Study/verilog source code/asscar/led_run.v Line: 70
+Info (12021): Found 2 design units, including 2 entities, in source file led_run.v
+    Info (12023): Found entity 1: led_run File: D:/Study/verilog source code/asscar/led_run.v Line: 1
+    Info (12023): Found entity 2: effect2 File: D:/Study/verilog source code/asscar/led_run.v Line: 106
+Info (12021): Found 1 design units, including 1 entities, in source file lcd_controller.v
+    Info (12023): Found entity 1: LCD_Controller File: D:/Study/verilog source code/asscar/LCD_Controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lcd_run.v
+    Info (12023): Found entity 1: lcd_run File: D:/Study/verilog source code/asscar/lcd_run.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file seg7_run.v
+    Info (12023): Found entity 1: seg7_run File: D:/Study/verilog source code/asscar/seg7_run.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ir_receive.v
+    Info (12023): Found entity 1: IR_RECEIVE File: D:/Study/verilog source code/asscar/IR_RECEIVE.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ir.v
+    Info (12023): Found entity 1: ir File: D:/Study/verilog source code/asscar/ir.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file seg_hex.v
+    Info (12023): Found entity 1: SEG_hex File: D:/Study/verilog source code/asscar/SEG_hex.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pll1.v
+    Info (12023): Found entity 1: pll1 File: D:/Study/verilog source code/asscar/pll1.v Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file ledbouncer.v
+    Info (12023): Found entity 1: ledbouncer File: D:/Study/verilog source code/asscar/ledbouncer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file test.v
+    Info (12023): Found entity 1: test File: D:/Study/verilog source code/asscar/test.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at car.v(39): instance has no name File: D:/Study/verilog source code/asscar/car.v Line: 39
+Critical Warning (10846): Verilog HDL Instantiation warning at led_run.v(96): instance has no name File: D:/Study/verilog source code/asscar/led_run.v Line: 96
+Warning (10037): Verilog HDL or VHDL warning at lcd_run.v(27): conditional expression evaluates to a constant File: D:/Study/verilog source code/asscar/lcd_run.v Line: 27
+Info (12127): Elaborating entity "car" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at car.v(14): object "enableir" assigned a value but never read File: D:/Study/verilog source code/asscar/car.v Line: 14
+Warning (10036): Verilog HDL or VHDL warning at car.v(19): object "first" assigned a value but never read File: D:/Study/verilog source code/asscar/car.v Line: 19
+Warning (10036): Verilog HDL or VHDL warning at car.v(24): object "select_lcd" assigned a value but never read File: D:/Study/verilog source code/asscar/car.v Line: 24
+Warning (10036): Verilog HDL or VHDL warning at car.v(25): object "select_seg7" assigned a value but never read File: D:/Study/verilog source code/asscar/car.v Line: 25
+Warning (10036): Verilog HDL or VHDL warning at car.v(60): object "i" assigned a value but never read File: D:/Study/verilog source code/asscar/car.v Line: 60
+Warning (10036): Verilog HDL or VHDL warning at car.v(103): object "checkpasss" assigned a value but never read File: D:/Study/verilog source code/asscar/car.v Line: 103
+Warning (10036): Verilog HDL or VHDL warning at car.v(121): object "sw" assigned a value but never read File: D:/Study/verilog source code/asscar/car.v Line: 121
+Warning (10036): Verilog HDL or VHDL warning at car.v(141): object "checkalert" assigned a value but never read File: D:/Study/verilog source code/asscar/car.v Line: 141
+Warning (10230): Verilog HDL assignment warning at car.v(139): truncated value with size 9 to match size of target (7) File: D:/Study/verilog source code/asscar/car.v Line: 139
+Info (12128): Elaborating entity "reduce_HZ_10HZ" for hierarchy "reduce_HZ_10HZ:comb_11" File: D:/Study/verilog source code/asscar/car.v Line: 39
+Info (12128): Elaborating entity "IR_RECEIVE" for hierarchy "IR_RECEIVE:u1" File: D:/Study/verilog source code/asscar/car.v Line: 59
+Info (12128): Elaborating entity "div_to_1" for hierarchy "div_to_1:c0" File: D:/Study/verilog source code/asscar/car.v Line: 107
+Warning (10230): Verilog HDL assignment warning at car.v(457): truncated value with size 32 to match size of target (25) File: D:/Study/verilog source code/asscar/car.v Line: 457
+Info (12128): Elaborating entity "led_run" for hierarchy "led_run:d" File: D:/Study/verilog source code/asscar/car.v Line: 389
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(44): object "p" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 44
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(44): object "pp" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 44
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(48): object "s" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 48
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(49): object "counter" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 49
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(50): object "counter1" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 50
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(51): object "endled" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 51
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(52): object "ppp" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 52
+Warning (10230): Verilog HDL assignment warning at led_run.v(16): truncated value with size 32 to match size of target (4) File: D:/Study/verilog source code/asscar/led_run.v Line: 16
+Warning (10230): Verilog HDL assignment warning at led_run.v(17): truncated value with size 32 to match size of target (1) File: D:/Study/verilog source code/asscar/led_run.v Line: 17
+Warning (10230): Verilog HDL assignment warning at led_run.v(28): truncated value with size 32 to match size of target (4) File: D:/Study/verilog source code/asscar/led_run.v Line: 28
+Warning (10762): Verilog HDL Case Statement warning at led_run.v(77): can't check case statement for completeness because the case expression has too many possible states File: D:/Study/verilog source code/asscar/led_run.v Line: 77
+Warning (10230): Verilog HDL assignment warning at led_run.v(101): truncated value with size 18 to match size of target (9) File: D:/Study/verilog source code/asscar/led_run.v Line: 101
+Info (12128): Elaborating entity "effect2" for hierarchy "led_run:d|effect2:comb_1155" File: D:/Study/verilog source code/asscar/led_run.v Line: 96
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(109): object "p" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 109
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(109): object "pp" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 109
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(114): object "s" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 114
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(115): object "counter" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 115
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(116): object "counter1" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 116
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(117): object "endled" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 117
+Warning (10036): Verilog HDL or VHDL warning at led_run.v(118): object "ppp" assigned a value but never read File: D:/Study/verilog source code/asscar/led_run.v Line: 118
+Info (12128): Elaborating entity "lcd_run" for hierarchy "lcd_run:dd" File: D:/Study/verilog source code/asscar/car.v Line: 393
+Warning (10230): Verilog HDL assignment warning at lcd_run.v(56): truncated value with size 32 to match size of target (18) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 56
+Warning (10230): Verilog HDL assignment warning at lcd_run.v(65): truncated value with size 32 to match size of target (6) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 65
+Warning (10230): Verilog HDL assignment warning at lcd_run.v(70): truncated value with size 32 to match size of target (6) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 70
+Warning (10270): Verilog HDL Case Statement warning at lcd_run.v(76): incomplete case statement has no default case item File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (10240): Verilog HDL Always Construct warning at lcd_run.v(76): inferring latch(es) for variable "LUT_DATA", which holds its previous value in one or more paths through the always construct File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Info (10041): Inferred latch for "LUT_DATA[0]" at lcd_run.v(76) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Info (10041): Inferred latch for "LUT_DATA[1]" at lcd_run.v(76) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Info (10041): Inferred latch for "LUT_DATA[2]" at lcd_run.v(76) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Info (10041): Inferred latch for "LUT_DATA[3]" at lcd_run.v(76) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Info (10041): Inferred latch for "LUT_DATA[4]" at lcd_run.v(76) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Info (10041): Inferred latch for "LUT_DATA[5]" at lcd_run.v(76) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Info (10041): Inferred latch for "LUT_DATA[6]" at lcd_run.v(76) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Info (10041): Inferred latch for "LUT_DATA[7]" at lcd_run.v(76) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Info (10041): Inferred latch for "LUT_DATA[8]" at lcd_run.v(76) File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Info (12128): Elaborating entity "div_to_1" for hierarchy "lcd_run:dd|div_to_1:clock_out" File: D:/Study/verilog source code/asscar/lcd_run.v Line: 24
+Warning (10230): Verilog HDL assignment warning at car.v(457): truncated value with size 32 to match size of target (25) File: D:/Study/verilog source code/asscar/car.v Line: 457
+Info (12128): Elaborating entity "LCD_Controller" for hierarchy "lcd_run:dd|LCD_Controller:u0" File: D:/Study/verilog source code/asscar/lcd_run.v Line: 491
+Warning (10230): Verilog HDL assignment warning at LCD_Controller.v(66): truncated value with size 32 to match size of target (5) File: D:/Study/verilog source code/asscar/LCD_Controller.v Line: 66
+Info (12128): Elaborating entity "seg7_run" for hierarchy "seg7_run:re" File: D:/Study/verilog source code/asscar/car.v Line: 394
+Warning (10762): Verilog HDL Case Statement warning at seg7_run.v(49): can't check case statement for completeness because the case expression has too many possible states File: D:/Study/verilog source code/asscar/seg7_run.v Line: 49
+Warning (10762): Verilog HDL Case Statement warning at seg7_run.v(67): can't check case statement for completeness because the case expression has too many possible states File: D:/Study/verilog source code/asscar/seg7_run.v Line: 67
+Warning (10762): Verilog HDL Case Statement warning at seg7_run.v(119): can't check case statement for completeness because the case expression has too many possible states File: D:/Study/verilog source code/asscar/seg7_run.v Line: 119
+Warning (10230): Verilog HDL assignment warning at seg7_run.v(215): truncated value with size 8 to match size of target (1) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 215
+Warning (10230): Verilog HDL assignment warning at seg7_run.v(225): truncated value with size 8 to match size of target (1) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 225
+Warning (10230): Verilog HDL assignment warning at seg7_run.v(234): truncated value with size 8 to match size of target (1) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 234
+Warning (10230): Verilog HDL assignment warning at seg7_run.v(243): truncated value with size 8 to match size of target (1) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 243
+Warning (10230): Verilog HDL assignment warning at seg7_run.v(252): truncated value with size 8 to match size of target (1) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 252
+Warning (10230): Verilog HDL assignment warning at seg7_run.v(261): truncated value with size 8 to match size of target (1) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 261
+Warning (10230): Verilog HDL assignment warning at seg7_run.v(269): truncated value with size 8 to match size of target (1) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 269
+Warning (10230): Verilog HDL assignment warning at seg7_run.v(278): truncated value with size 8 to match size of target (1) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 278
+Warning (10230): Verilog HDL assignment warning at seg7_run.v(287): truncated value with size 8 to match size of target (1) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 287
+Warning (10230): Verilog HDL assignment warning at seg7_run.v(296): truncated value with size 8 to match size of target (1) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 296
+Warning (10240): Verilog HDL Always Construct warning at seg7_run.v(376): inferring latch(es) for variable "hex_out", which holds its previous value in one or more paths through the always construct File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Warning (10240): Verilog HDL Always Construct warning at seg7_run.v(376): inferring latch(es) for variable "hex2", which holds its previous value in one or more paths through the always construct File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Warning (10240): Verilog HDL Always Construct warning at seg7_run.v(376): inferring latch(es) for variable "hex3", which holds its previous value in one or more paths through the always construct File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Warning (10240): Verilog HDL Always Construct warning at seg7_run.v(376): inferring latch(es) for variable "hex4", which holds its previous value in one or more paths through the always construct File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Warning (10240): Verilog HDL Always Construct warning at seg7_run.v(376): inferring latch(es) for variable "hex5", which holds its previous value in one or more paths through the always construct File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Warning (10240): Verilog HDL Always Construct warning at seg7_run.v(376): inferring latch(es) for variable "t", which holds its previous value in one or more paths through the always construct File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[0]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[1]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[2]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[3]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[4]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[5]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[6]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[7]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[8]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[9]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[10]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[11]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[12]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[13]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[14]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[15]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[16]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[17]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[18]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[19]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[20]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[21]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[22]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[23]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[24]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[25]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[26]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[27]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[28]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[29]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[30]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "t[31]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex5[0]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex5[1]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex5[2]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex5[3]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex5[4]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex5[5]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex5[6]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex4[0]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex4[1]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex4[2]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex4[3]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex4[4]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex4[5]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex4[6]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex3[0]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex3[1]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex3[2]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex3[3]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex3[4]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex3[5]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex3[6]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex2[0]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex2[1]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex2[2]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex2[3]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex2[4]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex2[5]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex2[6]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex_out[0]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex_out[1]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex_out[2]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex_out[3]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex_out[4]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex_out[5]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (10041): Inferred latch for "hex_out[6]" at seg7_run.v(376) File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[7]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[6]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[5]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[4]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[3]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[2]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[1]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[0]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[8]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[0]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[1]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[2]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[3]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[4]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[5]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[6]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[7]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "lcd_run:dd|LUT_DATA[8]" is permanently enabled File: D:/Study/verilog source code/asscar/lcd_run.v Line: 76
+Warning (14026): LATCH primitive "seg7_run:re|t[2]" is permanently enabled File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Warning (14026): LATCH primitive "seg7_run:re|t[1]" is permanently enabled File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Warning (14026): LATCH primitive "seg7_run:re|t[0]" is permanently enabled File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "seg7_run:re|hex_out[3]" merged with LATCH primitive "seg7_run:re|hex_out[0]" File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+    Info (13026): Duplicate LATCH primitive "seg7_run:re|hex_out[1]" merged with LATCH primitive "seg7_run:re|hex_out[0]" File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+    Info (13026): Duplicate LATCH primitive "seg7_run:re|hex_out[2]" merged with LATCH primitive "seg7_run:re|hex_out[0]" File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+    Info (13026): Duplicate LATCH primitive "seg7_run:re|hex_out[4]" merged with LATCH primitive "seg7_run:re|hex_out[0]" File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+    Info (13026): Duplicate LATCH primitive "seg7_run:re|hex_out[5]" merged with LATCH primitive "seg7_run:re|hex_out[0]" File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+    Info (13026): Duplicate LATCH primitive "seg7_run:re|hex_out[6]" merged with LATCH primitive "seg7_run:re|hex_out[0]" File: D:/Study/verilog source code/asscar/seg7_run.v Line: 376
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LCD_RW" is stuck at GND File: D:/Study/verilog source code/asscar/car.v Line: 11
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 12 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file D:/Study/verilog source code/asscar/output_files/car.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1525 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 24 input pins
+    Info (21059): Implemented 92 output pins
+    Info (21061): Implemented 1409 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 84 warnings
+    Info: Peak virtual memory: 4853 megabytes
+    Info: Processing ended: Wed Dec 11 11:45:41 2019
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:31
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Study/verilog source code/asscar/output_files/car.map.smsg.
+
+

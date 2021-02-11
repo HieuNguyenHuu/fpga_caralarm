@@ -1,0 +1,157 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Study/verilog source code/asscar/simulation/qsim
+vcar
+Z1 !s110 1576043236
+!i10b 1
+!s100 cfZLY:S[[9@d[Sk=3V>8R3
+I5RiHJNd[8cK5aWIYUZ3D70
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1576043232
+Z4 8car.vo
+Z5 Fcar.vo
+Z6 L0 32
+Z7 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z8 !s108 1576043235.000000
+Z9 !s107 car.vo|
+Z10 !s90 -work|work|car.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+vcar_vlg_vec_tst
+R1
+!i10b 1
+!s100 iSl9G:b6ozX?FfKifeUKa2
+I>jkz95`ThCVA=fl>fn`[53
+R2
+R0
+w1576043231
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+Z13 L0 30
+R7
+r1
+!s85 0
+31
+!s108 1576043236.000000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R11
+R12
+vhard_block
+R1
+!i10b 1
+!s100 L9Pm=0FBmG5N2;gElPYzO2
+Il0PAhENg_iH>1Q43CkNW71
+R2
+R0
+R3
+R4
+R5
+L0 39943
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+vled_run
+Z14 !s110 1575311349
+!i10b 1
+!s100 o2kXXU>Q;mYKmHmTljF[z2
+In_1KB_j`oV>NEZ`Ed0oK61
+R2
+R0
+w1575311348
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+Z15 !s108 1575311349.000000
+R9
+R10
+!i113 1
+R11
+R12
+vled_run_vlg_vec_tst
+R14
+!i10b 1
+!s100 Q^4I5f_kl0OaZCbLZH>_z1
+II@8dbA4;kMHkkSl3eX_8d3
+R2
+R0
+w1575311347
+8led_run_w.vwf.vt
+Fled_run_w.vwf.vt
+R13
+R7
+r1
+!s85 0
+31
+R15
+!s107 led_run_w.vwf.vt|
+!s90 -work|work|led_run_w.vwf.vt|
+!i113 1
+R11
+R12
+vtest
+Z16 !s110 1575912514
+!i10b 1
+!s100 WehhhPF11LdCgX6k9NH4^1
+IMWe69KQLkTj>Xm<zR;Vgg0
+R2
+R0
+w1575912513
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+Z17 !s108 1575912514.000000
+R9
+R10
+!i113 1
+R11
+R12
+vtest_vlg_vec_tst
+R16
+!i10b 1
+!s100 >zl[M^85<i?fg>P@b8GK61
+IC[6oBAoDA]VN[4J7f7ZJ53
+R2
+R0
+w1575912512
+8test.vwf.vt
+Ftest.vwf.vt
+R13
+R7
+r1
+!s85 0
+31
+R17
+!s107 test.vwf.vt|
+!s90 -work|work|test.vwf.vt|
+!i113 1
+R11
+R12
