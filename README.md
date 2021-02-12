@@ -15,12 +15,12 @@
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
-    <li><a href="#About The Project">About The Project</a></li>
-    <li><a href="#Project Requirements">Project Requirements</a></li>
-    <li><a href="#Design Diagram">Design Diagram</a></li>
-    <li><a href="#Functionalities">Functionalities</a></li>
-    <li><a href="#Evalution">Evalution</a></li>
-	<li><a href="#Contact">Contact</a></li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#project-requirements">Project Requirements</a></li>
+    <li><a href="#design-diagram">Design Diagram</a></li>
+    <li><a href="#functionalities">Functionalities</a></li>
+    <li><a href="#evalution">Evalution</a></li>
+	<li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
